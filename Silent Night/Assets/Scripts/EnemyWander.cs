@@ -24,15 +24,6 @@ public class EnemyWander : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        if (agent != null && agent.remainingDistance <= agent.stoppingDistance)
-        {
-            agent.SetDestination(RandomNavMeshLocation());
-        }
-
-    }
-
     public Vector3 RandomNavMeshLocation()
     {
         Vector3 finalPosition = Vector3.zero;
@@ -47,8 +38,10 @@ public class EnemyWander : MonoBehaviour
 
     public void StartWander()
     {
-        Update();
-        RandomNavMeshLocation();
+        if (agent != null && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            agent.SetDestination(RandomNavMeshLocation());
+        }
     }
 
     

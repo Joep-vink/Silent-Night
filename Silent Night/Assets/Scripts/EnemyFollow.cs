@@ -14,13 +14,8 @@ public class EnemyFollow : MonoBehaviour
         enemy = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
-    {
-        enemy.SetDestination(PlayerTarget.position);
-    }
-
     public void StartFollow()
     {
-        Update();
+        enemy.SetDestination(PlayerTarget.position);
     }
 }

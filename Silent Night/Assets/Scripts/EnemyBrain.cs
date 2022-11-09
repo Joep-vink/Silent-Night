@@ -18,4 +18,14 @@ public class EnemyBrain : MonoBehaviour
             GetComponent<EnemyFollow>().StartFollow();
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Cube")
+        {
+            Debug.Log("dead");
+        }
+    }
+
+
 }

@@ -20,30 +20,24 @@ public class AgentMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = currentVelocity * movementDirection.normalized;
+        rb.velocity = movementDirection.normalized * currentVelocity;
     }
 
     public void MoveAgent(Vector3 movementInput)
     {
         if (movementInput.magnitude > 0)
-        {
-            if (Vector3.Dot(movementInput.normalized, movementDirection) < 0)
-                currentVelocity = 0;
-            movementDirection = movementInput.normalized;
-        }
+            movementDirection = transform.forward * movementInput.z + transform.right * movementInput.x;
+        
         currentVelocity = CalculateSpeed(movementInput);
     }
 
     private float CalculateSpeed(Vector3 movementInput)
     {
         if (movementInput.magnitude > 0)
-        {
             currentVelocity += MovementData.acceleration * Time.deltaTime;
-        }
         else
-        {
             currentVelocity -= MovementData.deacceleration * Time.deltaTime;
-        }
+        
         return Mathf.Clamp(currentVelocity, 0, MovementData.maxSpeed);
     }
 }

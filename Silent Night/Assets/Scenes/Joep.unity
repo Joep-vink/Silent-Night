@@ -488,8 +488,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a4f4e0cfb0c33469f6ef3182cbb727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentVelocity: 3
   <MovementData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
+  currentVelocity: 3
+  <IsRunning>k__BackingField: 0
 --- !u!54 &698106150
 Rigidbody:
   m_ObjectHideFlags: 0

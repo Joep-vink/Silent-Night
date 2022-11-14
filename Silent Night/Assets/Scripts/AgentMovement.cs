@@ -8,19 +8,39 @@ public class AgentMovement : MonoBehaviour
     protected Rigidbody rb;
 
     protected Vector3 movementDirection;
-
+   
     [field: SerializeField]
-    public MovementDataSO MovementData { get; set; }
+    public MovementDataSO CrouchData { get; set; }
+    [field: SerializeField]
+    public MovementDataSO WalkData { get; set; }
+    [field: SerializeField]
+    public MovementDataSO RunData { get; set; }
 
     [Header("Debug")]
     [SerializeField]
     protected float currentVelocity = 0;
+
     [field: SerializeField]
     public bool IsRunning { get; private set; } = false;
+    [field: SerializeField]
+    public bool IsCrouching { get; private set; } = false;
+
+    private MovementDataSO currentMovementData;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        currentMovementData = WalkData;
+    }
+
+    private void Update()
+    {
+        if (IsCrouching)
+            currentMovementData = CrouchData;
+        else if (IsRunning)
+            currentMovementData = RunData;
+        else
+            currentMovementData = WalkData;
     }
 
     private void FixedUpdate()
@@ -32,11 +52,8 @@ public class AgentMovement : MonoBehaviour
     {
         if (movementInput.magnitude > 0)
             movementDirection = transform.forward * movementInput.z + transform.right * movementInput.x;
-
-        if (IsRunning)
-            currentVelocity = CalculateSpeed(movementInput, MovementData.runkAcceleration, MovementData.runDeacceleration, MovementData.maxRunSpeed);
-        else
-            currentVelocity = CalculateSpeed(movementInput, MovementData.walkAcceleration, MovementData.walkDeacceleration, MovementData.maxWalkSpeed);
+            
+        currentVelocity = CalculateSpeed(movementInput, currentMovementData.walkAcceleration, currentMovementData.walkDeacceleration, currentMovementData.maxWalkSpeed);
     }
 
     private float CalculateSpeed(Vector3 movementInput, float _acceleration, float _deacceleration, float _maxSpeed)

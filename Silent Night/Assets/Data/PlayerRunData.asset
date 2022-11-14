@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c815ef090a19f344a839ca253283534b, type: 3}
-  m_Name: PlayerMovementData
+  m_Name: PlayerRunData
   m_EditorClassIdentifier: 
-  maxWalkSpeed: 3
+  maxWalkSpeed: 7
   walkAcceleration: 5
   walkDeacceleration: 5
-  maxRunSpeed: 6
-  runkAcceleration: 6
-  runDeacceleration: 6

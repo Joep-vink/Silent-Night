@@ -488,7 +488,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a4f4e0cfb0c33469f6ef3182cbb727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MovementData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
+  <CrouchData>k__BackingField: {fileID: 11400000, guid: 8ce8d21f10775dc47802e4948758486e, type: 2}
+  <WalkData>k__BackingField: {fileID: 11400000, guid: 9439d7ad7b3b3074eb1df85975176622, type: 2}
+  <RunData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
   currentVelocity: 3
   <IsRunning>k__BackingField: 0
 --- !u!54 &698106150

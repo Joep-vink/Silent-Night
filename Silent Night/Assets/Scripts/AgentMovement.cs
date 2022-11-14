@@ -8,7 +8,7 @@ public class AgentMovement : MonoBehaviour
     protected Rigidbody rb;
 
     protected Vector3 movementDirection;
-   
+
     [field: SerializeField]
     public MovementDataSO CrouchData { get; set; }
     [field: SerializeField]
@@ -20,11 +20,6 @@ public class AgentMovement : MonoBehaviour
     [SerializeField]
     protected float currentVelocity = 0;
 
-    [field: SerializeField]
-    public bool IsRunning { get; private set; } = false;
-    [field: SerializeField]
-    public bool IsCrouching { get; private set; } = false;
-
     private MovementDataSO currentMovementData;
 
     private void Start()
@@ -35,9 +30,9 @@ public class AgentMovement : MonoBehaviour
 
     private void Update()
     {
-        if (IsCrouching)
+        if (Input.GetKey(KeyCode.LeftControl))
             currentMovementData = CrouchData;
-        else if (IsRunning)
+        else if (Input.GetKey(KeyCode.LeftShift))
             currentMovementData = RunData;
         else
             currentMovementData = WalkData;
@@ -52,7 +47,7 @@ public class AgentMovement : MonoBehaviour
     {
         if (movementInput.magnitude > 0)
             movementDirection = transform.forward * movementInput.z + transform.right * movementInput.x;
-            
+
         currentVelocity = CalculateSpeed(movementInput, currentMovementData.walkAcceleration, currentMovementData.walkDeacceleration, currentMovementData.maxWalkSpeed);
     }
 

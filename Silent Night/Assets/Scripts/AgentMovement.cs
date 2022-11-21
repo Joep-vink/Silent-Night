@@ -19,7 +19,8 @@ public class AgentMovement : MonoBehaviour
     [field: SerializeField]
     public float currentVelocity { get; private set; }
 
-    private MovementDataSO currentMovementData;
+    [HideInInspector]
+    public MovementDataSO currentMovementData;
 
     private void Start()
     {

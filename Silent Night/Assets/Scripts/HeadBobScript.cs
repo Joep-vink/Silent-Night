@@ -6,17 +6,10 @@ public class HeadBobScript : MonoBehaviour
 {
     [SerializeField]
     private bool enable = true;
-    [SerializeField, Range(0, 0.1f)]
-    private float amplitude = 0.15f;
-    [SerializeField, Range(0, 30f)]
-    private float frequency = 10;
 
     [SerializeField]
     private Transform camera;
-    [SerializeField]
-    private Transform cameraHolder;
 
-    float toggleSpeed = 3;
     Vector3 startPos;
     AgentMovement movement;
 
@@ -37,8 +30,8 @@ public class HeadBobScript : MonoBehaviour
     Vector3 FootStepMotion()
     {
         Vector3 _pos = Vector3.zero;
-        _pos.x += Mathf.Cos(Time.time * frequency / 2) * amplitude * 2;
-        _pos.y += Mathf.Sin(Time.time * frequency) * amplitude;
+        _pos.x += Mathf.Cos(Time.time * movement.currentMovementData.frequency / 2) * movement.currentMovementData.amplitude * 2;
+        _pos.y += Mathf.Sin(Time.time * movement.currentMovementData.frequency) * movement.currentMovementData.amplitude;
         return _pos;
     }
 

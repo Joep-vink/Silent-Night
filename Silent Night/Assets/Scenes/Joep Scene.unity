@@ -700,7 +700,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 738955953}
-  - component: {fileID: 738955952}
   - component: {fileID: 738955954}
   m_Layer: 0
   m_Name: CameraHolder
@@ -709,18 +708,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &738955952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738955951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8178dfb9adaf78e4ea67d9f3a5abc88a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &738955953
 Transform:
   m_ObjectHideFlags: 0
@@ -750,7 +737,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 100
   sensY: 100
-  orientation: {fileID: 738955953}
+  cameraHolder: {fileID: 738955953}
+  orientation: {fileID: 1473318993}
 --- !u!1 &1060098017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,6 +1393,7 @@ MonoBehaviour:
   <WalkData>k__BackingField: {fileID: 11400000, guid: 9439d7ad7b3b3074eb1df85975176622, type: 2}
   <RunData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
   <currentVelocity>k__BackingField: 0
+  currentMovementData: {fileID: 0}
 --- !u!114 &1473318997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1508,10 +1497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enable: 1
-  amplitude: 0.005
-  frequency: 10
   camera: {fileID: 1154576726}
-  cameraHolder: {fileID: 738955953}
 --- !u!1 &1509108038
 GameObject:
   m_ObjectHideFlags: 0

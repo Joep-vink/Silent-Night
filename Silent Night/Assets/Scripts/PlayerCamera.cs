@@ -6,7 +6,7 @@ public class PlayerCamera : MonoBehaviour
 {
     public float sensX, sensY;
 
-    public Transform camera, orientation;
+    public Transform cameraHolder, orientation;
 
     float xRotation, yRotation;
 
@@ -21,12 +21,11 @@ public class PlayerCamera : MonoBehaviour
         float _mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float _mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-        yRotation += _mouseX;
         xRotation -= _mouseY;
-
         xRotation = Mathf.Clamp(xRotation, -90, 90);
 
-        camera.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        transform.localEulerAngles = Vector3.right * xRotation;
+
+        orientation.Rotate(Vector3.up * _mouseX);
     }
 }

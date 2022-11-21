@@ -767,6 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 100
   sensY: 100
+  crouchSpeed: 5
   cameraHolder: {fileID: 738955953}
   orientation: {fileID: 1473318993}
   standPos: {fileID: 194535024}

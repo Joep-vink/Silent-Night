@@ -16,9 +16,8 @@ public class AgentMovement : MonoBehaviour
     [field: SerializeField]
     public MovementDataSO RunData { get; set; }
 
-    [Header("Debug")]
-    [SerializeField]
-    protected float currentVelocity = 0;
+    [field: SerializeField]
+    public float currentVelocity { get; private set; }
 
     private MovementDataSO currentMovementData;
 

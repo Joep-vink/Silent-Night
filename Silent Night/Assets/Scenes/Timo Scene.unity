@@ -652,9 +652,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a4f4e0cfb0c33469f6ef3182cbb727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MovementData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
-  currentVelocity: 3
-  <IsRunning>k__BackingField: 0
+  <CrouchData>k__BackingField: {fileID: 0}
+  <WalkData>k__BackingField: {fileID: 0}
+  <RunData>k__BackingField: {fileID: 0}
+  <currentVelocity>k__BackingField: 0
 --- !u!114 &534151239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1155,7 +1156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8178dfb9adaf78e4ea67d9f3a5abc88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPos: {fileID: 7889122}
 --- !u!4 &1265184476
 Transform:
   m_ObjectHideFlags: 0
@@ -1890,7 +1890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &2083331641
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1996,6 +1996,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b5db67613941543b715123adcc1dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerRange: 5
+  Player: {fileID: 534151234}
+  enemyState: 0
 --- !u!195 &2083331647
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2030,6 +2033,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe341bf53883d049b45c26598e8450c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 2083331647}
+  speed: 27.1
+  walkRadius: 261
 --- !u!114 &2083331649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,6 +2048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d97c2c2897a6ef429c510a87203a1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerTarget: {fileID: 534151235}
 --- !u!1 &2090571772
 GameObject:
   m_ObjectHideFlags: 0

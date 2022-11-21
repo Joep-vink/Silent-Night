@@ -21,6 +21,7 @@ public class AgentMovement : MonoBehaviour
 
     [HideInInspector]
     public MovementDataSO currentMovementData;
+    public bool isCrouched { get; private set; }
 
     private void Start()
     {
@@ -31,11 +32,20 @@ public class AgentMovement : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.LeftControl))
+        {
             currentMovementData = CrouchData;
+            isCrouched = true;
+        }
         else if (Input.GetKey(KeyCode.LeftShift))
+        {
+            isCrouched = false;
             currentMovementData = RunData;
+        }
         else
+        {
             currentMovementData = WalkData;
+            isCrouched = false;
+        }
     }
 
     private void FixedUpdate()

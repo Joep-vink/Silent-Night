@@ -655,7 +655,8 @@ MonoBehaviour:
   <CrouchData>k__BackingField: {fileID: 11400000, guid: 8ce8d21f10775dc47802e4948758486e, type: 2}
   <WalkData>k__BackingField: {fileID: 11400000, guid: 9439d7ad7b3b3074eb1df85975176622, type: 2}
   <RunData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
-  currentVelocity: 3
+  <currentVelocity>k__BackingField: 0
+  currentMovementData: {fileID: 0}
 --- !u!114 &534151239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1156,7 +1157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8178dfb9adaf78e4ea67d9f3a5abc88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPos: {fileID: 7889122}
 --- !u!4 &1265184476
 Transform:
   m_ObjectHideFlags: 0
@@ -2098,7 +2098,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 100
   sensY: 100
+  crouchSpeed: 5
+  cameraHolder: {fileID: 0}
   orientation: {fileID: 534151235}
+  standPos: {fileID: 0}
+  crouchPos: {fileID: 0}
 --- !u!114 &2090571775
 MonoBehaviour:
   m_ObjectHideFlags: 0

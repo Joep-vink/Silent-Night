@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public enum EnemyState
 {
@@ -60,13 +60,7 @@ public class EnemyBrain : MonoBehaviour
 
     }
 
-    public void OntriggerEnter(Collider coll)
-    {
-        if (coll.gameObject == true)
-        {
-            SceneManager.LoadScene(2);
-        }
-    }
+    
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()

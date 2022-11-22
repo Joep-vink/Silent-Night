@@ -59,6 +59,7 @@ public class EnemyBrain : MonoBehaviour
 
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (UnityEditor.Selection.activeObject = gameObject)
@@ -68,7 +69,7 @@ public class EnemyBrain : MonoBehaviour
             Gizmos.color = Color.white;
         }
     }
-
+#endif
 
 
     /*public GameObject Player;

@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxWalkSpeed: 5
   walkAcceleration: 5
-  walkDeacceleration: 5
+  walkDeacceleration: 10
+  amplitude: 0.001
+  frequency: 10

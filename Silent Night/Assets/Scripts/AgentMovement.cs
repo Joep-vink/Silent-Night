@@ -16,11 +16,12 @@ public class AgentMovement : MonoBehaviour
     [field: SerializeField]
     public MovementDataSO RunData { get; set; }
 
-    [Header("Debug")]
-    [SerializeField]
-    protected float currentVelocity = 0;
+    [field: SerializeField]
+    public float currentVelocity { get; private set; }
 
-    private MovementDataSO currentMovementData;
+    [HideInInspector]
+    public MovementDataSO currentMovementData;
+    public bool isCrouched { get; private set; }
 
     private void Start()
     {
@@ -31,11 +32,20 @@ public class AgentMovement : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.LeftControl))
+        {
             currentMovementData = CrouchData;
+            isCrouched = true;
+        }
         else if (Input.GetKey(KeyCode.LeftShift))
+        {
+            isCrouched = false;
             currentMovementData = RunData;
+        }
         else
+        {
             currentMovementData = WalkData;
+            isCrouched = false;
+        }
     }
 
     private void FixedUpdate()

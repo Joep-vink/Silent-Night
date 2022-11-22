@@ -22,7 +22,7 @@ public class EnemyFollow : MonoBehaviour
 
     public void OnTriggerEnter(Collider coll)
     {
-        if (coll.gameObject == true)
+        if (coll.gameObject == PlayerTarget.gameObject)
         {
             SceneManager.LoadScene(2);
         }

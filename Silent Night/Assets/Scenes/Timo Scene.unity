@@ -218,7 +218,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100006, guid: bae110eee250e4b418b188f4ae4e3170, type: 3}
+  - {fileID: 2100000, guid: 5811d2a1937b5e54b8aa13e1a0d678ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -448,7 +448,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100006, guid: bae110eee250e4b418b188f4ae4e3170, type: 3}
+  - {fileID: 2100000, guid: 5811d2a1937b5e54b8aa13e1a0d678ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -652,9 +652,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a4f4e0cfb0c33469f6ef3182cbb727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MovementData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
+  <CrouchData>k__BackingField: {fileID: 11400000, guid: 8ce8d21f10775dc47802e4948758486e, type: 2}
+  <WalkData>k__BackingField: {fileID: 11400000, guid: 9439d7ad7b3b3074eb1df85975176622, type: 2}
+  <RunData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
   currentVelocity: 3
-  <IsRunning>k__BackingField: 0
 --- !u!114 &534151239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,7 +1743,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100006, guid: bae110eee250e4b418b188f4ae4e3170, type: 3}
+  - {fileID: 2100000, guid: 5811d2a1937b5e54b8aa13e1a0d678ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1882,8 +1883,8 @@ GameObject:
   - component: {fileID: 2083331641}
   - component: {fileID: 2083331647}
   - component: {fileID: 2083331646}
-  - component: {fileID: 2083331649}
   - component: {fileID: 2083331648}
+  - component: {fileID: 2083331649}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -1978,7 +1979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083331640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.468695, y: 1.079, z: 2.0381784}
+  m_LocalPosition: {x: 7.85, y: 1.079, z: 1.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1996,6 +1997,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b5db67613941543b715123adcc1dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerRange: 5
+  Player: {fileID: 534151234}
+  enemyState: 0
 --- !u!195 &2083331647
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2030,6 +2034,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe341bf53883d049b45c26598e8450c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 2083331647}
+  speed: 3
+  walkRadius: 10
 --- !u!114 &2083331649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,6 +2049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d97c2c2897a6ef429c510a87203a1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerTarget: {fileID: 534151235}
 --- !u!1 &2090571772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,7 +2165,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 64
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

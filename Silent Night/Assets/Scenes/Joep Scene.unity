@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: d1d6ca023e6b0304a95009e830b67069, type: 2}
 --- !u!1 &1724446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,7 +1776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1896013534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,9 +1789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe341bf53883d049b45c26598e8450c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  speed: 0
-  walkRadius: 0
+  agent: {fileID: 1896013537}
+  speed: 5
+  walkRadius: 10
 --- !u!114 &1896013535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d97c2c2897a6ef429c510a87203a1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerTarget: {fileID: 0}
+  PlayerTarget: {fileID: 1473318993}
 --- !u!114 &1896013536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,8 +1817,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b5db67613941543b715123adcc1dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerRange: 0
-  Player: {fileID: 0}
+  PlayerRange: 5
+  Player: {fileID: 1473318992}
   enemyState: 0
 --- !u!195 &1896013537
 NavMeshAgent:

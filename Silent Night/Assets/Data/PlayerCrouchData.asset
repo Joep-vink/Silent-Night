@@ -15,5 +15,5 @@ MonoBehaviour:
   maxWalkSpeed: 3
   walkAcceleration: 5
   walkDeacceleration: 5
-  amplitude: 0.003
+  amplitude: 0.002
   frequency: 7

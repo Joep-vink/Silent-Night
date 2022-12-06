@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Thedest: {fileID: 1533979188}
   holding: 0
+  delay: 1
 --- !u!54 &310214886
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1526,6 +1527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Thedest: {fileID: 0}
   holding: 0
+  delay: 0
 --- !u!54 &1060098023
 Rigidbody:
   m_ObjectHideFlags: 0

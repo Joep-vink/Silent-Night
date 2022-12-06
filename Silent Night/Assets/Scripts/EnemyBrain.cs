@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public enum EnemyState
 {
     Wander,
@@ -29,16 +28,13 @@ public class EnemyBrain : MonoBehaviour
         UpdateStates(enemyState);
     }
 
-
     public void UpdateStates(EnemyState newState)
     {
         switch (newState)
         {
             case EnemyState.Wander:
                 if (Vector3.Distance(transform.position, Player.transform.position) > PlayerRange)
-                {
                     enemyWander.StartWander();
-                }
                 else
                 {
                     enemyState = EnemyState.Follow;
@@ -46,26 +42,19 @@ public class EnemyBrain : MonoBehaviour
                 break;
             case EnemyState.Follow:
                 if (Vector3.Distance(transform.position, Player.transform.position) < PlayerRange)
-                {
                     enemyFollow.StartFollow();
-                }
                 else
                 {
                     enemyState = EnemyState.Wander;
                 }
                 break;
         }
-
-
-
     }
-
-    
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        if (UnityEditor.Selection.activeObject = gameObject)
+        if (UnityEditor.Selection.activeObject == gameObject)
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, PlayerRange);
@@ -73,53 +62,4 @@ public class EnemyBrain : MonoBehaviour
         }
     }
 #endif
-
-
-    /*public GameObject Player;
-
-    public float PlayerRange;
-
-    private EnemyWander enemyWander;
-    private EnemyFollow enemyFollow;
-
-    private void Start()
-    {
-       enemyWander = GetComponent<EnemyWander>();
-       enemyFollow = GetComponent<EnemyFollow>();
-    }
-
-    private void Update()
-    {
-        if (Vector3.Distance(transform.position, Player.transform.position) > PlayerRange )
-        {
-            enemyWander.StartWander();
-            enemyFollow.followPlayer = false;
-            Debug.Log("wander");
-        }
-        else
-        {
-            enemyFollow.StartFollow();
-            Debug.Log("follow");
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (UnityEditor.Selection.activeObject = gameObject)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, PlayerRange);
-            Gizmos.color = Color.white;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "Cube")
-        {
-            Debug.Log("dead");
-        }
-    }*/
-
-
 }

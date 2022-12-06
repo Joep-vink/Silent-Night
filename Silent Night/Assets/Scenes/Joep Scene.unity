@@ -3071,8 +3071,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRange: 8
+  TpRange: 15
   Player: {fileID: 1473318992}
   enemyState: 0
+  showDebug: 1
 --- !u!195 &1896013537
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -7,28 +7,42 @@ public class Pickup : MonoBehaviour
     public Transform Thedest;
     public bool holding;
 
+    public float delay;
+    private float timer;
+
+    private void Start()
+    {
+        timer = delay;
+    }
+
     private void Update()
     {
         if (holding)
         {
             this.transform.position = Thedest.position;
+            timer -= Time.deltaTime;
+
+            if (timer <= 0 && Input.GetMouseButtonDown(0))
+            {
+                holding = false;
+                this.transform.parent = null;
+                GetComponent<Rigidbody>().useGravity = true;
+                GetComponent<Rigidbody>().velocity = Vector2.zero;
+                GetComponent<SphereCollider>().enabled = true;
+            }
         }
-       
     }
 
-    public void OnMouseButton()
+    private void OnMouseDown()
     {
-        holding =! holding;
-        GetComponent<SphereCollider>().enabled = false;
-        GetComponent<Rigidbody>().useGravity = false;
-        this.transform.parent = GameObject.Find("Destination").transform;
-    }
-
-    public void OnMouseUp()
-    {
-        holding = false;
-        this.transform.parent = null;
-        GetComponent<Rigidbody>().useGravity = true;
-        GetComponent<SphereCollider>().enabled = true;
+        if (!holding)
+        {
+            timer = delay;
+            GetComponent<SphereCollider>().enabled = false;
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().velocity = Vector2.zero;
+            this.transform.parent = GameObject.Find("Destination").transform;
+            holding = true;
+        }
     }
 }

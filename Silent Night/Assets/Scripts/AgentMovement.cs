@@ -23,8 +23,15 @@ public class AgentMovement : MonoBehaviour
     public MovementDataSO currentMovementData;
     public bool isCrouched { get; private set; }
 
+    [Header("Stamina")]
+    public float CurrentStamina;
+    public float MaxStamina;
+    public float TiredSpeed;
+    public float GainSpeed;
+
     private void Start()
     {
+        CurrentStamina = MaxStamina;
         rb = GetComponent<Rigidbody>();
         currentMovementData = WalkData;
     }
@@ -33,19 +40,24 @@ public class AgentMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
+            CurrentStamina += Time.deltaTime * GainSpeed;
             currentMovementData = CrouchData;
             isCrouched = true;
         }
-        else if (Input.GetKey(KeyCode.LeftShift))
+        else if (Input.GetKey(KeyCode.LeftShift) && CurrentStamina > 0)
         {
+            CurrentStamina -= Time.deltaTime * GainSpeed;
             isCrouched = false;
             currentMovementData = RunData;
         }
         else
         {
+            CurrentStamina += Time.deltaTime * GainSpeed;
             currentMovementData = WalkData;
             isCrouched = false;
         }
+
+        Mathf.Clamp(CurrentStamina, 0, MaxStamina);
     }
 
     private void FixedUpdate()

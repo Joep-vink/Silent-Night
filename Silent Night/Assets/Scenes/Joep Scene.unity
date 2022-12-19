@@ -2495,6 +2495,10 @@ MonoBehaviour:
   <RunData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
   <currentVelocity>k__BackingField: 0
   currentMovementData: {fileID: 0}
+  CurrentStamina: 10
+  MaxStamina: 10
+  TiredSpeed: 10
+  GainSpeed: 5
 --- !u!114 &1473318997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3362,7 +3366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1896013534
 MonoBehaviour:
   m_ObjectHideFlags: 0

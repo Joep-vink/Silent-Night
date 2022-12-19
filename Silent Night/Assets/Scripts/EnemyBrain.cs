@@ -71,7 +71,7 @@ public class EnemyBrain : MonoBehaviour
 
     void Teleport()
     {
-        transform.position = Player.transform.position + new Vector3(10, transform.position.y);
+        transform.position = Player.transform.position + new Vector3(30, transform.position.y);
 
         if (Vector3.Distance(transform.position, Player.transform.position) > PlayerRange)
             enemyState = EnemyState.Wander;

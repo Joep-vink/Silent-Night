@@ -28,7 +28,7 @@ public class Pickup : MonoBehaviour
                 this.transform.parent = null;
                 GetComponent<Rigidbody>().useGravity = true;
                 GetComponent<Rigidbody>().velocity = Vector2.zero;
-                GetComponent<SphereCollider>().enabled = true;
+                GetComponent<BoxCollider>().enabled = true;
             }
         }
     }
@@ -38,7 +38,7 @@ public class Pickup : MonoBehaviour
         if (!holding)
         {
             timer = delay;
-            GetComponent<SphereCollider>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().velocity = Vector2.zero;
             this.transform.parent = GameObject.Find("Destination").transform;

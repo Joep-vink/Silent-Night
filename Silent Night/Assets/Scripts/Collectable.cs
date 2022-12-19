@@ -12,20 +12,19 @@ public class Collectable : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Coin")
+        if (collision.gameObject.tag == "Coin")
         {
             Debug.Log("coin erbij");
             Coins = Coins + 1;
-            Destroy(other.gameObject);
         }
 
-        if (Coins == 3)
+        if (Coins == 5)
         {
             SceneManager.LoadScene(1);
         }
     }
 
-
+    
 }

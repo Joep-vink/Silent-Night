@@ -26,12 +26,13 @@ public class sceneSwitch : MonoBehaviour
         if (other.gameObject.tag == "outside")
         {
             PlayerTransform.position = Teleportinside.position;
-
+            AudioManager.instance.Play("door");
         }
 
         if (other.gameObject.tag == "inside")
         {
             PlayerTransform.position = TeleportOutside.position;
+            AudioManager.instance.Play("door");
         }
 
     }

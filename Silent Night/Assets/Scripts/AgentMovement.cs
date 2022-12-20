@@ -88,7 +88,10 @@ public class AgentMovement : MonoBehaviour
     public void MoveAgent(Vector3 movementInput)
     {
         if (movementInput.magnitude > 0)
+        {
+            AudioManager.instance.Play("walk");
             movementDirection = transform.forward * movementInput.z + transform.right * movementInput.x;
+        }      
 
         currentVelocity = CalculateSpeed(movementInput, currentMovementData.walkAcceleration, currentMovementData.walkDeacceleration, currentMovementData.maxWalkSpeed);
     }

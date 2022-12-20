@@ -62,7 +62,7 @@ public class EnemyBrain : MonoBehaviour
     void Follow()
     {
         enemyFollow.StartFollow();
-
+        AudioManager.instance.Play("chase");
         if (Vector3.Distance(transform.position, Player.transform.position) > PlayerRange)
             enemyState = EnemyState.Wander;
         else if (Vector3.Distance(transform.position, Player.transform.position) > TpRange)

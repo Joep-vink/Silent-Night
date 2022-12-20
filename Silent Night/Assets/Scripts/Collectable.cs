@@ -14,6 +14,7 @@ public class Collectable : MonoBehaviour
             Debug.Log("coin erbij");
             Coins = Coins + 1;
             DontDestroyOnLoad(this.gameObject);
+            AudioManager.instance.Play("wendigo");
         }
 
         if (Coins == 5)

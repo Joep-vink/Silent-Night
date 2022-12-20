@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,40 +25,41 @@ public class AgentMovement : MonoBehaviour
     public bool isCrouched { get; private set; }
 
     [Header("Stamina")]
-    public float CurrentStamina;
     public float MaxStamina;
     public float TiredSpeed;
     public float GainSpeed;
+    public float stamina;
+    public bool CanRun = true;
 
     private void Start()
     {
-        CurrentStamina = MaxStamina;
+        stamina = MaxStamina;
         rb = GetComponent<Rigidbody>();
         currentMovementData = WalkData;
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl))
+        NewStamina();
+    }
+
+    private void NewStamina()
+    {
+        Mathf.Clamp(stamina, 0, MaxStamina);
+
+        if (Input.GetKey(KeyCode.LeftShift) && CanRun)
         {
-            CurrentStamina += Time.deltaTime * GainSpeed;
-            currentMovementData = CrouchData;
-            isCrouched = true;
-        }
-        else if (Input.GetKey(KeyCode.LeftShift) && CurrentStamina > 0)
-        {
-            CurrentStamina -= Time.deltaTime * GainSpeed;
-            isCrouched = false;
-            currentMovementData = RunData;
+            if (stamina <= 0)
+            {
+                CanRun = false;
+            }
+         
+            stamina -= Time.deltaTime * TiredSpeed;
         }
         else
         {
-            CurrentStamina += Time.deltaTime * GainSpeed;
-            currentMovementData = WalkData;
-            isCrouched = false;
+            stamina += Time.deltaTime * GainSpeed;
         }
-
-        Mathf.Clamp(CurrentStamina, 0, MaxStamina);
     }
 
     private void FixedUpdate()

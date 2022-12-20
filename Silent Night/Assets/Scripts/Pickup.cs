@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    public int id;
+
     public Transform Thedest;
     public bool holding;
 
     public float delay;
     private float timer;
+
+    private void Awake()
+    {
+        if (PlayerPrefs.GetInt(id.ToString()) == 1)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     private void Start()
     {

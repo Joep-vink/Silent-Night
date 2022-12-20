@@ -15,6 +15,6 @@ public class PlayerUI : MonoBehaviour
 
     private void Update()
     {
-        staminaBar.rectTransform.localScale = new Vector3(movement.CurrentStamina, 1); 
+        staminaBar.rectTransform.localScale = new Vector3(Mathf.Clamp(movement.stamina,0,1), 1); 
     }
 }

@@ -52,7 +52,7 @@ public class EnemyBrain : MonoBehaviour
     void Wander()
     {
         enemyWander.StartWander();
-
+        AudioManager.instance.Stop("chase");
         if (Vector3.Distance(transform.position, Player.transform.position) < PlayerRange)
             enemyState = EnemyState.Follow;
         else if (Vector3.Distance(transform.position, Player.transform.position) > TpRange)
@@ -72,7 +72,7 @@ public class EnemyBrain : MonoBehaviour
     void Teleport()
     {
         transform.position = Player.transform.position + new Vector3(30, transform.position.y);
-
+        AudioManager.instance.Stop("chase");
         if (Vector3.Distance(transform.position, Player.transform.position) > PlayerRange)
         {
             enemyState = EnemyState.Wander;

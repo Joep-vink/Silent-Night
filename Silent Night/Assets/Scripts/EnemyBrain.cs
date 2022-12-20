@@ -34,6 +34,7 @@ public class EnemyBrain : MonoBehaviour
 
     public void UpdateStates(EnemyState newState)
     {
+
         switch (newState)
         {
             case EnemyState.Wander:
@@ -53,6 +54,7 @@ public class EnemyBrain : MonoBehaviour
     {
         enemyWander.StartWander();
         AudioManager.instance.Stop("chase");
+        AudioManager.instance.Play("e_footstep");
         if (Vector3.Distance(transform.position, Player.transform.position) < PlayerRange)
             enemyState = EnemyState.Follow;
         else if (Vector3.Distance(transform.position, Player.transform.position) > TpRange)

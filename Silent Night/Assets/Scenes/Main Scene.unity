@@ -7588,7 +7588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &687399717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13624,7 +13624,7 @@ MonoBehaviour:
   <currentVelocity>k__BackingField: 0
   currentMovementData: {fileID: 0}
   MaxStamina: 10
-  TiredSpeed: 3
+  TiredSpeed: 2
   GainSpeed: 2
   stamina: 0
   CanRun: 1
@@ -16338,6 +16338,14 @@ MonoBehaviour:
     volume: 0.734
     pitch: 2.14
     spacialBlend: 0.13
+    loop: 0
+    source: {fileID: 0}
+  - name: e_footstep
+    clip: {fileID: 8300000, guid: 2620d32f47b7ff74dbd7c48d5cdb31f1, type: 3}
+    parent: {fileID: 1358558805}
+    volume: 0.734
+    pitch: 3
+    spacialBlend: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1358558805

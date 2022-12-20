@@ -12,17 +12,14 @@ public class Pickup : MonoBehaviour
     public float delay;
     private float timer;
 
-    private void Awake()
+    private void Start()
     {
+        timer = delay;
+
         if (PlayerPrefs.GetInt(id.ToString()) == 1)
         {
             gameObject.SetActive(false);
         }
-    }
-
-    private void Start()
-    {
-        timer = delay;
     }
 
     private void Update()

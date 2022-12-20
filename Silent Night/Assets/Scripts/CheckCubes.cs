@@ -18,7 +18,5 @@ public class CheckCubes : MonoBehaviour
                 PlayerPrefs.SetInt(_cubes[i].id.ToString(), 1);
             }
         }
-
-        Debug.Log(cubes.Count);
     }
 }

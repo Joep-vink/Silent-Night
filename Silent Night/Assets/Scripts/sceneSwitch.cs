@@ -9,7 +9,6 @@ public class sceneSwitch : MonoBehaviour
     public Transform Teleportinside;
     public Transform TeleportOutside;
 
-
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -25,6 +24,7 @@ public class sceneSwitch : MonoBehaviour
     {
         if (other.gameObject.tag == "outside")
         {
+            AudioManager.instance.Play("Door");
             PlayerTransform.position = Teleportinside.position;
 
         }

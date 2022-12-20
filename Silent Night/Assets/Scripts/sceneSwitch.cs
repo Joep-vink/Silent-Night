@@ -9,7 +9,6 @@ public class sceneSwitch : MonoBehaviour
     public Transform Teleportinside;
     public Transform TeleportOutside;
 
-
     public void StartGame()
     {
         SceneManager.LoadScene(1);

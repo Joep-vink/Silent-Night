@@ -9,6 +9,18 @@ public class sceneSwitch : MonoBehaviour
     public Transform Teleportinside;
     public Transform TeleportOutside;
 
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit Game");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "outside")

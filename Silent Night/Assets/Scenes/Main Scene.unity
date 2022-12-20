@@ -16325,7 +16325,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: walk
-    clip: {fileID: 8300000, guid: 3d5a186c124b9964cb7bd08b9398113e, type: 3}
+    clip: {fileID: 8300000, guid: 1dc92e343ab626945b86809186243c6b, type: 3}
     parent: {fileID: 1358558805}
     volume: 0.734
     pitch: 2.14

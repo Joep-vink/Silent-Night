@@ -16348,6 +16348,14 @@ MonoBehaviour:
     spacialBlend: 1
     loop: 0
     source: {fileID: 0}
+  - name: Jumpscare
+    clip: {fileID: 8300000, guid: 11eec3eb2efb8ac48bba100c780b10b9, type: 3}
+    parent: {fileID: 1358558805}
+    volume: 1
+    pitch: 1
+    spacialBlend: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1358558805
 Transform:
   m_ObjectHideFlags: 0

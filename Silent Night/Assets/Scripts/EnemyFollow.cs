@@ -24,6 +24,7 @@ public class EnemyFollow : MonoBehaviour
     {
         if (coll.gameObject == PlayerTarget.gameObject)
         {
+            AudioManager.instance.Play("Jumpscare");
             SceneManager.LoadScene(2);
         }
     }

@@ -5,18 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class sceneSwitch : MonoBehaviour
 {
+    public Transform PlayerTransform;
+    public Transform Teleportinside;
+    public Transform TeleportOutside;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "outside")
         {
-            SceneManager.LoadScene(2);
-            DontDestroyOnLoad(this.gameObject);
+            PlayerTransform.position = Teleportinside.position;
+
         }
 
         if (other.gameObject.tag == "inside")
         {
-            SceneManager.LoadScene(0);
-            Destroy(this.gameObject);
+            PlayerTransform.position = TeleportOutside.position;
         }
 
     }

@@ -44,5 +44,9 @@ public class EnemyWander : MonoBehaviour
         }
     }
 
-    
+    public void ChoseNewDestination()
+    {
+        agent.SetDestination(RandomNavMeshLocation());
+    }
+
 }

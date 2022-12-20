@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &121991142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 121991144}
+  - component: {fileID: 121991143}
+  m_Layer: 0
+  m_Name: CubeChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &121991143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121991142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c3628f499dac8498eb9a69472554cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubes: []
+--- !u!4 &121991144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121991142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146384159
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,11 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c2cf8ba584df0439b4ec718df1c98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 225852325734019800, guid: 82d0746e099aaa247935a70ecf0278ae, type: 3}
-  coin2: {fileID: 225852325734019800, guid: 192e8d6dc40af0444b320b107fd5aed6, type: 3}
-  coin3: {fileID: 225852325734019800, guid: 2eb4177f8647b964d972dbf321e6a033, type: 3}
-  coin4: {fileID: 225852325734019800, guid: 320d45fa09254d349aa1e9cfe630bcec, type: 3}
-  coin5: {fileID: 225852325734019800, guid: ffe2e7be6673f8843a9990e1494207c1, type: 3}
   Coins: 0
 --- !u!1 &1534733084
 GameObject:

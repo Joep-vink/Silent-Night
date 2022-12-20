@@ -2353,6 +2353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991087c1d3af31b449d2bdc29d400c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 5
   Thedest: {fileID: 902853539}
   holding: 0
   delay: 1
@@ -6533,6 +6534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991087c1d3af31b449d2bdc29d400c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 2
   Thedest: {fileID: 902853539}
   holding: 0
   delay: 1
@@ -10190,6 +10192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991087c1d3af31b449d2bdc29d400c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 1
   Thedest: {fileID: 902853539}
   holding: 0
   delay: 1
@@ -13383,10 +13386,10 @@ MonoBehaviour:
   <RunData>k__BackingField: {fileID: 11400000, guid: e8d56a17de10a4148afa55ec0ea7fe8d, type: 2}
   <currentVelocity>k__BackingField: 0
   currentMovementData: {fileID: 0}
-  CurrentStamina: 0
-  MaxStamina: 0
-  TiredSpeed: 0
-  GainSpeed: 0
+  CurrentStamina: 10
+  MaxStamina: 10
+  TiredSpeed: 10
+  GainSpeed: 5
 --- !u!114 &1153208116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16189,6 +16192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991087c1d3af31b449d2bdc29d400c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3
   Thedest: {fileID: 902853539}
   holding: 0
   delay: 1
@@ -25327,6 +25331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991087c1d3af31b449d2bdc29d400c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 4
   Thedest: {fileID: 902853539}
   holding: 0
   delay: 1
@@ -28740,7 +28745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!136 &2011176250
 CapsuleCollider:
   m_ObjectHideFlags: 0

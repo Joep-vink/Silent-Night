@@ -74,7 +74,10 @@ public class EnemyBrain : MonoBehaviour
         transform.position = Player.transform.position + new Vector3(30, transform.position.y);
 
         if (Vector3.Distance(transform.position, Player.transform.position) > PlayerRange)
+        {
             enemyState = EnemyState.Wander;
+            enemyWander.ChoseNewDestination();
+        }
         else if (Vector3.Distance(transform.position, Player.transform.position) < PlayerRange)
             enemyState = EnemyState.Follow;
     }

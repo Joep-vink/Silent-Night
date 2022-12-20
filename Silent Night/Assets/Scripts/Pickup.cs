@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    public int id;
+
     public Transform Thedest;
     public bool holding;
 
@@ -13,6 +15,11 @@ public class Pickup : MonoBehaviour
     private void Start()
     {
         timer = delay;
+
+        if (PlayerPrefs.GetInt(id.ToString()) == 1)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void Update()

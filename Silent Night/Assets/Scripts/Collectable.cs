@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Collectable : MonoBehaviour
 {
     public int Coins;
+    public  TextMeshProUGUI countText;
+    private int count;
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,6 +19,7 @@ public class Collectable : MonoBehaviour
             Coins = Coins + 1;
             DontDestroyOnLoad(this.gameObject);
             AudioManager.instance.Play("wendigo");
+            SetCountText();
         }
 
         if (Coins == 5)
@@ -23,5 +28,9 @@ public class Collectable : MonoBehaviour
         }
     }
 
-    
+    void SetCountText()
+    {
+        countText.text = "Coins " + Coins.ToString() + "/5";
+    }
+
 }

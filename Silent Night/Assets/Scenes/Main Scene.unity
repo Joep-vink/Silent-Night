@@ -7934,8 +7934,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 88f362c7f6b77094cb2feb4b62b11fa8, type: 2}
+  m_sharedMaterial: {fileID: 4151862992401177344, guid: 88f362c7f6b77094cb2feb4b62b11fa8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7966,8 +7966,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8025,8 +8025,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.71161, y: 320.8335}
-  m_SizeDelta: {x: 543.4232, y: 38.333}
+  m_AnchoredPosition: {x: 0, y: 320.8335}
+  m_SizeDelta: {x: 1000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599437899
 MonoBehaviour:
@@ -8040,7 +8040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b337877cd5eccd94ea6712e5c0d3004e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LetterPerSecond: 25
+  LetterPerSecond: 40
   dialogText: {fileID: 599437896}
 --- !u!1001 &599926456
 PrefabInstance:
@@ -15572,6 +15572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bce9ae6eb00a3a40840ba2d90eeb627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TpAfterXAmount: 0
   PlayerTransform: {fileID: 1153208120}
   Teleportinside: {fileID: 1568314093}
   TeleportOutside: {fileID: 150679184}
@@ -32621,7 +32622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b5db67613941543b715123adcc1dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxWaitTimeTillTP: 0
+  MaxWaitTimeTillTP: 5
   PlayerRange: 25
   TpRange: 40
   Player: {fileID: 1153208111}

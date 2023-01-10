@@ -10,7 +10,7 @@ public class TextDi : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(TypeDialog("Bring the collectables inside the house and place them on the table"));
+        StartCoroutine(TypeDialog("Bring the collectables inside the house and place them on the table."));
     }
 
     public void SetDialog(string dialog)

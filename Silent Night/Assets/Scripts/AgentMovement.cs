@@ -49,6 +49,7 @@ public class AgentMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftControl))
         {
+            isCrouched = true;
             if (stamina <= MaxStamina)
                 stamina += Time.deltaTime * GainSpeed;
 
@@ -56,10 +57,10 @@ public class AgentMovement : MonoBehaviour
                 CanRun = true;
 
             currentMovementData = CrouchData;
-            isCrouched = true;
         }
-        if (Input.GetKey(KeyCode.LeftShift) && CanRun)
+        else if (Input.GetKey(KeyCode.LeftShift) && CanRun)
         {
+            isCrouched = false;
             if (stamina <= 0)
             {
                 CanRun = false;
@@ -70,6 +71,7 @@ public class AgentMovement : MonoBehaviour
         }
         else
         {
+            isCrouched = false;
             currentMovementData = WalkData;
             
             if (stamina <= MaxStamina)

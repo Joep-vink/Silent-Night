@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,40 +25,61 @@ public class AgentMovement : MonoBehaviour
     public bool isCrouched { get; private set; }
 
     [Header("Stamina")]
-    public float CurrentStamina;
     public float MaxStamina;
     public float TiredSpeed;
     public float GainSpeed;
+    public float stamina;
+    public bool CanRun = true;
 
     private void Start()
     {
-        CurrentStamina = MaxStamina;
+        stamina = MaxStamina;
         rb = GetComponent<Rigidbody>();
         currentMovementData = WalkData;
     }
 
     private void Update()
     {
+        NewStamina();
+    }
+
+    private void NewStamina()
+    {
+        Mathf.Clamp(stamina, 0, MaxStamina);
+
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            CurrentStamina += Time.deltaTime * GainSpeed;
-            currentMovementData = CrouchData;
             isCrouched = true;
+            if (stamina <= MaxStamina)
+                stamina += Time.deltaTime * GainSpeed;
+
+            if (stamina >= MaxStamina)
+                CanRun = true;
+
+            currentMovementData = CrouchData;
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && CurrentStamina > 0)
+        else if (Input.GetKey(KeyCode.LeftShift) && CanRun)
         {
-            CurrentStamina -= Time.deltaTime * GainSpeed;
             isCrouched = false;
+            if (stamina <= 0)
+            {
+                CanRun = false;
+            }
+
             currentMovementData = RunData;
+            stamina -= Time.deltaTime * TiredSpeed;
         }
         else
         {
-            CurrentStamina += Time.deltaTime * GainSpeed;
-            currentMovementData = WalkData;
             isCrouched = false;
-        }
+            currentMovementData = WalkData;
+            
+            if (stamina <= MaxStamina)
+                stamina += Time.deltaTime * GainSpeed;
 
-        Mathf.Clamp(CurrentStamina, 0, MaxStamina);
+            if (stamina >= MaxStamina)
+                CanRun = true;
+        }
     }
 
     private void FixedUpdate()
@@ -68,7 +90,10 @@ public class AgentMovement : MonoBehaviour
     public void MoveAgent(Vector3 movementInput)
     {
         if (movementInput.magnitude > 0)
+        {
+            AudioManager.instance.Play("walk");
             movementDirection = transform.forward * movementInput.z + transform.right * movementInput.x;
+        }      
 
         currentVelocity = CalculateSpeed(movementInput, currentMovementData.walkAcceleration, currentMovementData.walkDeacceleration, currentMovementData.maxWalkSpeed);
     }

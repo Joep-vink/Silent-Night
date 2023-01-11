@@ -7,6 +7,11 @@ TagManager:
   - Coin
   - inside
   - outside
+  - Coin2
+  - Coin3
+  - Coin4
+  - Coin5
+  - Coin1
   layers:
   - Default
   - TransparentFX

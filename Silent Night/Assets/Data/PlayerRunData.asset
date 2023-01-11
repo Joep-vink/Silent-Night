@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815ef090a19f344a839ca253283534b, type: 3}
   m_Name: PlayerRunData
   m_EditorClassIdentifier: 
-  maxWalkSpeed: 7
+  maxWalkSpeed: 10
   walkAcceleration: 5
   walkDeacceleration: 5
-  amplitude: 0.003
+  amplitude: 0.002
   frequency: 13

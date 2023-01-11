@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class EnemyFollow : MonoBehaviour
@@ -9,6 +10,8 @@ public class EnemyFollow : MonoBehaviour
     private NavMeshAgent enemy;
 
     public Transform PlayerTarget;
+
+    public UnityEvent OnJumpScare;
 
     private void Start()
     {
@@ -24,7 +27,8 @@ public class EnemyFollow : MonoBehaviour
     {
         if (coll.gameObject == PlayerTarget.gameObject)
         {
-            SceneManager.LoadScene(2);
+            OnJumpScare?.Invoke();
+            AudioManager.instance.Play("Jumpscare");
         }
     }
 }

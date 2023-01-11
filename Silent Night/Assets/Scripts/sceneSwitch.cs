@@ -13,6 +13,9 @@ public class sceneSwitch : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         if (TpAfterXAmount)
         {
             StartCoroutine(SwitchScene());

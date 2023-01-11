@@ -5,9 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class sceneSwitch : MonoBehaviour
 {
+    public bool TpAfterXAmount = false;
+
     public Transform PlayerTransform;
     public Transform Teleportinside;
     public Transform TeleportOutside;
+
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        if (TpAfterXAmount)
+        {
+            StartCoroutine(SwitchScene());
+        }
+    }
+
+    IEnumerator SwitchScene()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(0);
+    }
 
     public void StartGame()
     {

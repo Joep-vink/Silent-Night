@@ -22,7 +22,7 @@ public class Collectable : MonoBehaviour
             SetCountText();
         }
 
-        if (Coins == 5)
+        if (Coins == 6)
         {
             SceneManager.LoadScene(1);
         }

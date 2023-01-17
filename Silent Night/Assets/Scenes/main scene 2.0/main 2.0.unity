@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 0.13
+    agentHeight: 0.42
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.18
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.043333333
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 1f954ee071bfdf148ab8cd768be188c1, type: 2}
 --- !u!1001 &505323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3676,6 +3676,119 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5321750500925138889, guid: 91ba83c5d4ebe9245abb51eb02a00ffe, type: 3}
   m_PrefabInstance: {fileID: 131858832}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &133519623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133519626}
+  - component: {fileID: 133519625}
+  - component: {fileID: 133519624}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &133519624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133519623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c33d927336c674faf2821430e9d771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: dad9143d74e02d242969e42bbdf35d3b, type: 3}
+  - {fileID: 8300000, guid: 47db0fb60dc071d41845e07d2f4cc75a, type: 3}
+  currentClip: {fileID: 0}
+  source: {fileID: 0}
+  minWaitBetweenPlays: 20
+  maxWaitBetweenPlays: 45
+  waitTimeCountdown: -1
+--- !u!114 &133519625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133519623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e308d67269faf646bea750be355dd11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: wendigo
+    clip: {fileID: 8300000, guid: 0309d5e01e02eb4449f8fb9d40aca6fe, type: 3}
+    parent: {fileID: 133519626}
+    volume: 0.734
+    pitch: 2.14
+    spacialBlend: 0.13
+    loop: 0
+    source: {fileID: 0}
+  - name: door
+    clip: {fileID: 8300000, guid: 08f0c20f5c1814c4db96225ad64a8c22, type: 3}
+    parent: {fileID: 133519626}
+    volume: 0.734
+    pitch: 2.14
+    spacialBlend: 0.13
+    loop: 0
+    source: {fileID: 0}
+  - name: walk
+    clip: {fileID: 8300000, guid: 1dc92e343ab626945b86809186243c6b, type: 3}
+    parent: {fileID: 133519626}
+    volume: 0.734
+    pitch: 2.14
+    spacialBlend: 0.13
+    loop: 0
+    source: {fileID: 0}
+  - name: chase
+    clip: {fileID: 8300000, guid: cd021cbbe36936f4f904703e5f0dbb78, type: 3}
+    parent: {fileID: 133519626}
+    volume: 0.734
+    pitch: 2.14
+    spacialBlend: 0.13
+    loop: 0
+    source: {fileID: 0}
+  - name: e_footstep
+    clip: {fileID: 8300000, guid: 2620d32f47b7ff74dbd7c48d5cdb31f1, type: 3}
+    parent: {fileID: 133519626}
+    volume: 0.734
+    pitch: 3
+    spacialBlend: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jumpscare
+    clip: {fileID: 8300000, guid: 11eec3eb2efb8ac48bba100c780b10b9, type: 3}
+    parent: {fileID: 133519626}
+    volume: 1
+    pitch: 1
+    spacialBlend: 0
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &133519626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133519623}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 48
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &138148226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15888,6 +16001,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3179906659142432369, guid: 096f3ba3b28376449bf95a96e2c98b2e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4878555354868678472, guid: 096f3ba3b28376449bf95a96e2c98b2e, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -31574,7 +31691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147265885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.0004, z: -0.0032}
+  m_LocalPosition: {x: -0.006, y: 0.0126, z: -0.0032}
   m_LocalScale: {x: 0.108359106, y: 0.092105255, z: 0.092105255}
   m_Children: []
   m_Father: {fileID: 1701097065}
@@ -31591,9 +31708,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.7169812, g: 0.021509435, b: 0, a: 1}
-  m_Intensity: 4.41
-  m_Range: 5.15
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 10
+  m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -31634,7 +31751,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 1.19
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -37680,6 +37797,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4d184c1ce625cd245bcfeda0b7450210, type: 3}
       propertyPath: m_Name
       value: Ground_Textured
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d184c1ce625cd245bcfeda0b7450210, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d184c1ce625cd245bcfeda0b7450210, type: 3}
@@ -44807,7 +44928,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
@@ -44824,7 +44945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8dbb822a20f4c43a9f975784edf95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enable: 1
+  enable: 0
   camera: {fileID: 1481391302}
 --- !u!114 &1695509231
 MonoBehaviour:
@@ -50335,7 +50456,7 @@ TerrainCollider:
   m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 5647ac31a1c583f4f898e49085768017, type: 2}
-  m_EnableTreeColliders: 1
+  m_EnableTreeColliders: 0
 --- !u!218 &1905331774
 Terrain:
   m_ObjectHideFlags: 0
